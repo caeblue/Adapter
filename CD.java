@@ -7,36 +7,71 @@ public class CD implements DigitalAlbum
 
     public CD(String song1, String song2, String song3, String song4, String song5)
     {
-        //wip
+        songs.add(song1);
+        songs.add(song2);
+        songs.add(song3);
+        songs.add(song4);
+        songs.add(song5);
     }
 
     public String playFromBeginning()
     {
+        for(int i=0; i < 5; i++)
+        {
+            System.out.println( "Playing song " + currentIdex + songs.get(currentIdex));
+        }
         return "";
     }
 
     public String playSong(int num)
     {
-        return "";
-    }
+        if(num < 5)
+        {
+        currentIdex = num;
+        String retString = "Playing "+ (currentIdex + 1) + ": " + songs.get(currentIdex);
+        currentIdex ++;
+        return retString;
+        }
+        else
+        {
+            return "Not a valid song number";
 
-    public String prevSong()
-    {
-        return "";
+        }
     }
 
     public String nextSong()
     {
-        return "";
+        if(currentIdex == 4)
+        {
+            currentIdex= 0;
+        }
+        else
+        {
+            currentIdex++;
+        }
+        return "playing " + songs.get(currentIdex);
+    }
+
+    public String prevSong()
+    {
+       if(currentIdex < 6 && currentIdex != 0)
+       {
+           currentIdex --;
+       }
+       else
+       {
+           currentIdex = 1;
+       }
+        return "Skipping back and playing: " + songs.get(currentIdex);
     }
 
     public String stop()
     {
-        return "";
+        return "pausing";
     }
 
     public String pause()
     {
-        return "";
+        return "Stopping CD and ejecting";
     }
 }

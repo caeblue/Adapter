@@ -1,34 +1,35 @@
 public class AnalogAdapter implements AnalogAlbum{
-    
+    private DigitalAlbum album;
 
     public AnalogAdapter(DigitalAlbum album)
     {
-        //wip
+        this.album = album;
     }
 
     public String play()
     {
-        return "";
+        return album.nextSong();
     }
 
     public String rewind()
     {
-        return "";
+        return album.prevSong();
     }
 
     public String ffwd()
     {
-        return "";
+        return album.nextSong();
     }
 
     public String pause()
     {
-        return "";
+        return album.pause();
+     
     }
 
     public String stopEject()
     {
-        return "";
+        return album.stop(); 
     }
 
 
