@@ -25,6 +25,9 @@ public class Cassett implements AnalogAlbum
         songs.add(song5);
     }
 
+    /**
+     * method to play music based on the index
+     */
     public String play()
     {
         if(currentIndex < 5)
@@ -40,12 +43,18 @@ public class Cassett implements AnalogAlbum
         }
     }
 
+    /**
+     * method to rewind to the previous song in the index
+     */
     public String rewind()
     {
              currentIndex --;
              return "Rewinding to song " + (currentIndex +1);
     }
 
+    /**
+     * method to rewind to the next song in the index
+     */
     public String ffwd()
     {
         if (currentIndex == 4)
@@ -59,11 +68,18 @@ public class Cassett implements AnalogAlbum
         }
     }
 
+    /**
+     * method to display a pause in music
+     */
     public String pause()
     {
         return "Pausing";
     }
 
+
+    /**
+     * method to display stopping the music
+     */
     public String stopEject()
     {
         return "Stopping cassett and ejecting";
