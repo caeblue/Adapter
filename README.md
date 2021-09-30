@@ -1,1 +1,1 @@
-# CSCE247_adapter
+# Software Engineering 247
